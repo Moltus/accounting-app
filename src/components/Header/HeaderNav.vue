@@ -70,7 +70,7 @@ export default {
         },
         {
           id: 4,
-          title: "Annotations Automatiques"
+          title: "Annotations"
         },
         {
           id: 5,
