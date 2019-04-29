@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-toolbar
-      color="cyan"
+      color="primary"
       dark
       tabs
     >
@@ -22,10 +22,10 @@
       <template v-slot:extension>
         <v-tabs
           v-model="tab"
-          color="cyan"
+          color="primary"
           grow
         >
-          <v-tabs-slider color="yellow"></v-tabs-slider>
+          <v-tabs-slider color="blue"></v-tabs-slider>
 
           <v-tab
             v-for="headerTab in headerTabs"
@@ -52,7 +52,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: "HeaderNav",
   data() {
     return {
       headerTabs: [

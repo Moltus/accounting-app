@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <Header pageTitle="Ma Comptabilité" />
+    <HeaderNav pageTitle="Ma Comptabilité" />
 
     <v-content>
       
@@ -9,12 +9,12 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
+import HeaderNav from './components/Header/HeaderNav.vue';
 
 export default {
   name: 'App',
   components: {
-    Header
+    HeaderNav
   },
   data () {
     return {
