@@ -1,5 +1,8 @@
 # accounting-app
 
+test ui/ux - refonte d'application de gestion de compte.
+stack : Vue.js, Vuetify, Material Design Icons
+
 ## Project setup
 ```
 npm install
