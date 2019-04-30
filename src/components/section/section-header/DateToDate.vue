@@ -58,7 +58,7 @@
     data: () => ({
       date1: new Date().toISOString().substr(0, 10),
       date2: new Date().toISOString().substr(0, 10),
-      menu: false,
+      menu1: false,
       modal: false,
       menu2: false
     })
