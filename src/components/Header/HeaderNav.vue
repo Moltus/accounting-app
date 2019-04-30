@@ -1,11 +1,11 @@
 <template>
   <div>
     <v-toolbar
-      color="primary"
+      color="#755e53"
       dark
       tabs
     >
-      <v-toolbar-side-icon></v-toolbar-side-icon>
+      <img src="../../assets/company-logo-white.svg" width="25px">
 
       <v-toolbar-title>{{pageTitle}}</v-toolbar-title>
 
@@ -22,10 +22,10 @@
       <template v-slot:extension>
         <v-tabs
           v-model="tab"
-          color="primary"
+          color="#755e53"
           grow
         >
-          <v-tabs-slider color="blue"></v-tabs-slider>
+          <v-tabs-slider color="success"></v-tabs-slider>
 
           <v-tab
             v-for="headerTab in headerTabs"
@@ -47,8 +47,8 @@
             
             <v-layout row wrap>
               <v-flex xs12 sm6 md3 v-for="mainItem in mainItems" v-bind:key="mainItem.id">
-                <h3 class="text-xs-center" v-bind:class="[mainItem.color]">{{mainItem.title}}</h3>
-                <h2 class="text-xs-center" v-bind:class="[mainItem.color]">{{mainItem.value}}</h2>
+                <h3 class="text-xs-center font-weight-black" v-bind:class="[mainItem.color + '--text text--lighten-2']">{{mainItem.title}}</h3>
+                <h2 class="text-xs-center font-weight-black" v-bind:class="[mainItem.color + '--text']">{{mainItem.value}}</h2>
               </v-flex>
             </v-layout>
           </v-container>

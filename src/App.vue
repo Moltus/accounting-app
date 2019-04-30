@@ -19,10 +19,10 @@ export default {
   data () {
     return {
       mainItems: [
-        { id: 1, title: 'TRÉSORERIE', value: '7649,68€', color:'indigo--text' },
-        { id: 2, title: 'RECETTES', value: '6816,30€', color:'teal--text' },
-        { id: 3, title: 'DÉPENSES', value: '-2761,53€', color:'green--text' },
-        { id: 4, title: 'À VALIDER', value: '54', color:'light-green--text' }
+        { id: 1, title: 'TRÉSORERIE', value: '7649,68€', color:'indigo' },
+        { id: 2, title: 'RECETTES', value: '6816,30€', color:'teal' },
+        { id: 3, title: 'DÉPENSES', value: '-2761,53€', color:'deep-purple' },
+        { id: 4, title: 'À VALIDER', value: '54', color:'primary' }
       ],
       operationCategories: [
         { id: 1, title: 'Carburants' },
