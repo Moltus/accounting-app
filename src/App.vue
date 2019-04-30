@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <HeaderNav pageTitle="Ma Comptabilité" />
+    <HeaderNav pageTitle="Ma Comptabilité" v-bind:mainItems="mainItems" />
 
     <v-content>
       
@@ -19,10 +19,10 @@ export default {
   data () {
     return {
       mainItems: [
-        { id: 1, title: 'TRÉSORERIE', value: '7649,68€' },
-        { id: 2, title: 'RECETTES', value: '6816,30€' },
-        { id: 3, title: 'DÉPENSES', value: '-2761,53€' },
-        { id: 4, title: 'À VALIDER', value: '54' }
+        { id: 1, title: 'TRÉSORERIE', value: '7649,68€', color:'indigo--text' },
+        { id: 2, title: 'RECETTES', value: '6816,30€', color:'teal--text' },
+        { id: 3, title: 'DÉPENSES', value: '-2761,53€', color:'green--text' },
+        { id: 4, title: 'À VALIDER', value: '54', color:'light-green--text' }
       ],
       operationCategories: [
         { id: 1, title: 'Carburants' },

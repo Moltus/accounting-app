@@ -43,7 +43,15 @@
         :key="headerTab.id"
       >
         <v-card flat>
-          <v-card-text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias odio necessitatibus quasi nihil totam maxime minus quam soluta velit, dicta, veniam tempore quo corporis iste quisquam atque rem saepe accusamus!</v-card-text>
+          <v-container fluid>
+            
+            <v-layout row wrap>
+              <v-flex xs12 sm6 md3 v-for="mainItem in mainItems" v-bind:key="mainItem.id">
+                <h3 class="text-xs-center" v-bind:class="[mainItem.color]">{{mainItem.title}}</h3>
+                <h2 class="text-xs-center" v-bind:class="[mainItem.color]">{{mainItem.value}}</h2>
+              </v-flex>
+            </v-layout>
+          </v-container>
         </v-card>
       </v-tab-item>
     </v-tabs-items>
@@ -55,6 +63,7 @@ export default {
   name: "HeaderNav",
   data() {
     return {
+      tab: null,
       headerTabs: [
         {
           id: 1,
@@ -79,6 +88,6 @@ export default {
       ]
     }
   },
-  props: ["pageTitle"]
+  props: ["pageTitle", "mainItems"]
 }
 </script>
