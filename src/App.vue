@@ -3,18 +3,20 @@
     <HeaderNav pageTitle="Ma Comptabilité" v-bind:mainItems="mainItems" />
 
     <v-content>
-      
+      <SectionHeader v-bind:opsCategories="opsCategories" v-bind:operations="operations" />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HeaderNav from './components/Header/HeaderNav.vue';
+import HeaderNav from './components/header/HeaderNav.vue';
+import SectionHeader from './components/section/SectionHeader.vue';
 
 export default {
   name: 'App',
   components: {
-    HeaderNav
+    HeaderNav,
+    SectionHeader
   },
   data () {
     return {
@@ -24,7 +26,7 @@ export default {
         { id: 3, title: 'DÉPENSES', value: '-2761,53€', color:'deep-purple' },
         { id: 4, title: 'À VALIDER', value: '54', color:'primary' }
       ],
-      operationCategories: [
+      opsCategories: [
         { id: 1, title: 'Carburants' },
         { id: 2, title: 'Publicités' },
         { id: 3, title: 'Déplacements' },

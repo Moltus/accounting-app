@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-toolbar
-      color="#755e53"
+      color="info"
       dark
       tabs
     >
@@ -22,10 +22,10 @@
       <template v-slot:extension>
         <v-tabs
           v-model="tab"
-          color="#755e53"
+          color="info"
           grow
         >
-          <v-tabs-slider color="success"></v-tabs-slider>
+          <v-tabs-slider color="secondary"></v-tabs-slider>
 
           <v-tab
             v-for="headerTab in headerTabs"
@@ -46,7 +46,7 @@
           <v-container fluid>
             
             <v-layout row wrap>
-              <v-flex xs12 sm6 md3 v-for="mainItem in mainItems" v-bind:key="mainItem.id">
+              <v-flex xs6 sm3 py-2 v-for="mainItem in mainItems" v-bind:key="mainItem.id">
                 <h3 class="text-xs-center font-weight-black" v-bind:class="[mainItem.color + '--text text--lighten-2']">{{mainItem.title}}</h3>
                 <h2 class="text-xs-center font-weight-black" v-bind:class="[mainItem.color + '--text']">{{mainItem.value}}</h2>
               </v-flex>
