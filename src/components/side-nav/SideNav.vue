@@ -29,6 +29,7 @@
 
   nav {
     background-color: rgb(75, 75, 75);
+    background-image: url('../../assets/background.jpg');
     height: 100vh;
     width: 260px;
     user-select: none;

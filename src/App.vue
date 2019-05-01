@@ -21,6 +21,7 @@
 <script>
 // import HeaderNav from './components/header/HeaderNav.vue';
 import SideNav from './components/side-nav/SideNav.vue';
+import TopSection from './components/top-section/TopSection.vue';
 import MainSectionHeader from './components/main-section/MainSectionHeader.vue';
 
 
@@ -28,6 +29,7 @@ export default {
   name: 'App',
   components: {
     SideNav,
+    TopSection,
     MainSectionHeader
   },
   data () {
