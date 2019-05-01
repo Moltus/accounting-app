@@ -1,25 +1,75 @@
 <template>
   <v-app>
-    <HeaderNav pageTitle="Ma Comptabilité" v-bind:mainItems="mainItems" />
-
-    <v-content>
-      <SectionHeader v-bind:opsCategories="opsCategories" v-bind:operations="operations" />
-    </v-content>
+    <v-container fluid pa-0 ma-0>
+      <v-layout row wrap>
+        <v-flex shrink>
+        
+          <SideNav pageTitle="Ma Comptabilité" v-bind:navButtons="navButtons"/>
+        </v-flex>
+        <v-flex>
+          <v-content>
+            <MainSectionHeader v-bind:opsCategories="opsCategories" v-bind:operations="operations" />
+          </v-content>
+        </v-flex>
+      </v-layout>
+    
+    
+    </v-container>
   </v-app>
 </template>
 
 <script>
-import HeaderNav from './components/header/HeaderNav.vue';
-import SectionHeader from './components/section/SectionHeader.vue';
+// import HeaderNav from './components/header/HeaderNav.vue';
+import SideNav from './components/side-nav/SideNav.vue';
+import MainSectionHeader from './components/main-section/MainSectionHeader.vue';
+
 
 export default {
   name: 'App',
   components: {
-    HeaderNav,
-    SectionHeader
+    SideNav,
+    MainSectionHeader
   },
   data () {
     return {
+      navButtons: [
+        {
+          id: 1,
+          title: 'Dashboard',
+          icon: 'mdi-view-dashboard',
+          active: false
+        },
+        {
+          id: 2,
+          title: 'Mes Comptes',
+          icon: 'mdi-checkbook',
+          active: false
+        },
+        {
+          id: 3,
+          title: 'Annotations auto.',
+          icon: 'mdi-pen-plus',
+          active: false
+        },
+        {
+          id: 4,
+          title: 'Paiements',
+          icon: 'mdi-currency-eur',
+          active: true
+        },
+        {
+          id: 5,
+          title: 'Ajouter Banque',
+          icon: 'mdi-bank',
+          active: false
+        },
+        {
+          id: 6,
+          title: 'Déclarer',
+          icon: 'mdi-clipboard-check',
+          active: false
+        }
+      ],
       mainItems: [
         { id: 1, title: 'TRÉSORERIE', value: '7649,68€', color:'indigo' },
         { id: 2, title: 'RECETTES', value: '6816,30€', color:'teal' },
