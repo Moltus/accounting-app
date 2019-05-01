@@ -56,7 +56,7 @@
   export default {
     name: "DateToDate",
     data: () => ({
-      date1: new Date().toISOString().substr(0, 10),
+      date1: new Date('2019-01-01').toISOString().substr(0, 10),
       date2: new Date().toISOString().substr(0, 10),
       menu1: false,
       modal: false,

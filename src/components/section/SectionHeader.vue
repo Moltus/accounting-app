@@ -30,10 +30,13 @@
       <v-card flat v-if="i == 1">
         <v-layout row wrap class="pa-3">
           <v-flex xs12 sm4>
+            <ToValidateSwitch />
+          </v-flex>
+          <v-flex xs12 sm4>
             <DateToDate />
           </v-flex>
           <v-flex xs12 sm4>
-            <ToValidateSwitch />
+            <SearchField />
           </v-flex>
         </v-layout>
       </v-card>
@@ -47,12 +50,14 @@
 <script>
   import DateToDate from './section-header/DateToDate.vue';
   import ToValidateSwitch from './section-header/ToValidateSwitch.vue';
+  import SearchField from './section-header/SearchField.vue';
 
   export default {
     name: "SectionHeader",
     components: {
       DateToDate,
-      ToValidateSwitch
+      ToValidateSwitch,
+      SearchField
     },
     
     data () {
