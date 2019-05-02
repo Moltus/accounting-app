@@ -3,7 +3,7 @@
     :items="items"
     label="Filtrer par..."
     class="px-4"
-    color="primary"
+    color="black"
   ></v-select>
 </template>
 

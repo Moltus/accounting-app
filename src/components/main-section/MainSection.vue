@@ -29,29 +29,40 @@
             <template v-slot:activator>
               <v-list-tile>
                 <v-list-tile-content >
-                  <v-layout row wrap justify-center align-content-center >
-                    <v-flex xs-3 class="mr-3">
-                      <p>{{getDayMonthFR(operation.date)}}</p>
-                    </v-flex>
-                    <v-flex xs-2 class="cell">
-                      <v-icon class="mr-3" :class="getIcon(operation.category)[1] + '--text'">{{getIcon(operation.category)[0]}}</v-icon>
-                    </v-flex>
-                    <v-flex xs-3 class="cell mr-4">
-                      <v-list-tile-title >{{ operation.title }}</v-list-tile-title>
-                    </v-flex>
-                    <v-flex xs-3 class="cell2 mr-3">
-                      <p>{{operation.comment}}</p>
-                    </v-flex>
-                    <v-flex xs-3 class="cell mr-3">
-                      <p>TVA : {{operation.rate ? operation.rate : 0}} %</p>
-                    </v-flex>
-                    <v-flex xs-3 class="">
-                      <p>{{operation.amount}} €</p>
-                    </v-flex>
-                  </v-layout>
+                  <v-container class="pb-0 pl-0">
+                    <v-layout row wrap justify-center align-content-center >
+                      <v-flex xs-2 class="cell2" text-xs-center>
+                        <p>{{getDayMonthFR(operation.date)}}</p>
+                      </v-flex>
+                      <v-flex xs-1 class="cell1" text-xs-center>
+                        <v-icon class="mr-3" :class="getIcon(operation.category)[1] + '--text'">{{getIcon(operation.category)[0]}}</v-icon>
+                      </v-flex>
+                      <v-flex xs-2 class="cell2">
+                        <v-list-tile-title >{{ operation.title }}</v-list-tile-title>
+                      </v-flex>
+                      <v-flex xs-3 class="cell3">
+                        <p>{{operation.comment}}</p>
+                      </v-flex>
+                      <v-flex xs-2 class="cell2" text-xs-right>
+                        <p>TVA : {{operation.rate ? operation.rate : 0}} %</p>
+                      </v-flex>
+                      <v-flex xs-2 class="cell2" text-xs-right>
+                        <p>{{operation.amount}} €</p>
+                      </v-flex>
+                    </v-layout>
+                  </v-container>
                 </v-list-tile-content>
               </v-list-tile>
             </template>
+            <v-list-tile 
+              v-if="operation.file == null"  
+            >
+              <v-list-tile-content>
+                <v-list-tile-title class='mt-4'>Test</v-list-tile-title>
+         
+              </v-list-tile-content>
+
+            </v-list-tile>
 
             
           </v-list-group>
@@ -100,7 +111,7 @@
       getDayMonthFR(date) {
         let month = new Array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
         let myDate = new Date(date);
-        return myDate.getDay() + ' ' + month[myDate.getMonth()];
+        return myDate.getDay() + ' ' + month[myDate.getMonth()] + ' ' + myDate.getFullYear();
       }
     }
     
@@ -108,12 +119,14 @@
 </script>
 
 <style scoped>
-  .cell {
-    width: 150px;
-    text-align: center;
+  .cell1 {
+    min-width: 75px;
   }
   .cell2 {
-    width: 300px;
+    min-width: 150px;
+  }
+  .cell3 {
+    min-width: 300px;
   }
 
 </style>

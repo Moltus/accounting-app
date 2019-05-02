@@ -119,7 +119,7 @@ export default {
       ],
       opsCategories: [
         { id: 1, title: 'Carburants', icon: 'mdi-gas-station', color: 'secondary' },
-        { id: 2, title: 'Publicités', icon: 'mid-bullhorn', color: 'success' },
+        { id: 2, title: 'Publicités', icon: 'mdi-bullhorn', color: 'success' },
         { id: 3, title: 'Déplacements', icon: 'mdi-train-car', color: 'green' },
         { id: 4, title: 'Frais Bancaires', icon: 'mdi-bank', color: 'blue' }
       ],
@@ -156,7 +156,7 @@ export default {
         },
         {
           id: 4,
-          date: '2019-04-26',
+          date: '2019-04-25',
           title: 'CRÉDIT AGRICOLE',
           amount: '74,32',
           comment: 'Lorem ipsum dolor sit amet.',
@@ -176,7 +176,7 @@ export default {
         },
         {
           id: 6,
-          date: '2019-04-22',
+          date: '2019-04-24',
           title: 'SNCF',
           amount: '34,32',
           comment: 'Lorem ipsum dolor sit amet.',
@@ -186,9 +186,29 @@ export default {
         },
         {
           id: 7,
-          date: '2019-04-24',
+          date: '2019-04-22',
           title: 'FRANPRIX',
           amount: '34,32',
+          comment: null,
+          category: null,
+          rate: null,
+          file: null
+        },
+        {
+          id: 8,
+          date: '2019-04-22',
+          title: 'AXA',
+          amount: '234,32',
+          comment: 'Lorem ipsum dolor sit amet.',
+          category: 2,
+          rate: 10,
+          file: 'facture59.pdf'
+        },
+        {
+          id: 9,
+          date: '2019-04-21',
+          title: 'SOCIÉTÉ GÉNÉRALE',
+          amount: '734,32',
           comment: null,
           category: null,
           rate: null,
