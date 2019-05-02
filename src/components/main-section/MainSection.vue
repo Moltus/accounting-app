@@ -19,6 +19,7 @@
             </v-flex>
           </v-layout>
         </v-toolbar>
+        
         <v-list>
           <v-list-group
             v-for="operation in operations"
@@ -54,15 +55,64 @@
                 </v-list-tile-content>
               </v-list-tile>
             </template>
-            <v-list-tile 
+            <form 
+              action=""
               v-if="operation.file == null"  
+              class=" grey lighten-3"
             >
-              <v-list-tile-content>
-                <v-list-tile-title class='mt-4'>Test</v-list-tile-title>
-         
-              </v-list-tile-content>
-
-            </v-list-tile>
+              <v-container>
+                <v-layout align-start justify-center row fill-height>
+                  <v-flex>
+                    <label for="category">Catégorie :</label>
+                    <v-radio-group column v-model="categoryRadio">
+                      <v-radio 
+                        v-for="category in opsCategories" 
+                        :key="category.id"
+                        v-bind:label="category.title"
+                        v-bind:color="category.color"
+                        v-bind:value="category.title"
+                      ></v-radio>
+                    </v-radio-group>
+                  </v-flex>
+                  <v-flex>
+                    <label for="comment">Commentaire :</label><br><br>
+                    <textarea class="white" name="comment" id="comment" cols="60" rows="6"></textarea>
+                  </v-flex>
+                  <v-flex>
+                    <label for="">Taux de TVA : </label>
+                    <v-radio-group column v-model="vatRateRadio">
+                      <v-radio 
+                        v-for="vatRate in vatRates" 
+                        :key="vatRate.id"
+                        v-bind:label="vatRate.title"
+                        v-bind:color="black"
+                        v-bind:value="vatRate.title"
+                      ></v-radio>
+                    </v-radio-group>
+                  </v-flex>
+                  <v-flex>
+                    <label for="income">Télécharger facture :</label>
+                    <br><br>
+                    <!-- <input type="file" name="income" id="income"> -->
+                    <v-btn
+                      :loading="loading3"
+                      :disabled="loading3"
+                      color="blue-grey"
+                      class="white--text"
+                      @click="loader = 'loading3'"
+                    >
+                      Fichier
+                      <v-icon right dark>cloud_upload</v-icon>
+                    </v-btn>
+                    <br><br>
+                    <!-- <input type="submit" value="Valider l'opération"> -->
+                    <v-btn color="primary">Valider l'opération
+                      <v-icon right dark>check_circle</v-icon>
+                    </v-btn>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </form>
 
             
           </v-list-group>
@@ -90,10 +140,13 @@
     
     data () {
       return {
-        
+        categoryRadio: 'Publicités',
+        vatRateRadio: 0,
+        loader: null,
+        loading: false,
       }
     },
-    props: ['operations', 'opsCategories'],
+    props: ['operations', 'opsCategories', 'vatRates'],
     methods: {
       getIcon(id) {
         let icon;
@@ -113,6 +166,16 @@
         let myDate = new Date(date);
         return myDate.getDay() + ' ' + month[myDate.getMonth()] + ' ' + myDate.getFullYear();
       }
+    },
+    watch: {
+      loader () {
+        const l = this.loader
+        this[l] = !this[l]
+
+        setTimeout(() => (this[l] = false), 3000)
+
+        this.loader = null
+      }
     }
     
   }
@@ -127,6 +190,43 @@
   }
   .cell3 {
     min-width: 300px;
+  }
+
+  .custom-loader {
+    animation: loader 1s infinite;
+    display: flex;
+  }
+  @-moz-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @-o-keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes loader {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
 </style>

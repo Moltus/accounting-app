@@ -19,7 +19,7 @@
   export default {
     name: "SideNav",
     data: () => ({
-      activeBtn: ''
+      activeBtn: 'btn4'
     }),
     props: [ "pageTitle", "navButtons" ]
   }

@@ -8,8 +8,13 @@
         </v-flex>
         <v-flex>
           <v-content>
-            <TopSection v-bind:topSectionTabs="topSectionTabs" v-bind:mainItems="mainItems" />
-            <MainSection v-bind:opsCategories="opsCategories" v-bind:operations="operations" />
+            <TopSection 
+              v-bind:topSectionTabs="topSectionTabs" v-bind:mainItems="mainItems"
+            />
+            <MainSection 
+              v-bind:opsCategories="opsCategories" v-bind:operations="operations" 
+              v-bind:vatRates="vatRates"
+            />
           </v-content>
         </v-flex>
       </v-layout>
@@ -71,6 +76,18 @@ export default {
           title: 'Déclarer',
           icon: 'mdi-clipboard-check',
           active: false
+        },
+        {
+          id: 7,
+          title: 'Outils de calcul',
+          icon: 'mdi-calculator',
+          active: false
+        },
+        {
+          id: 8,
+          title: "Mode d'Emploi",
+          icon: 'mdi-help-circle',
+          active: false
         }
       ],
       topSectionTabs: [
@@ -118,10 +135,16 @@ export default {
         }
       ],
       opsCategories: [
-        { id: 1, title: 'Carburants', icon: 'mdi-gas-station', color: 'secondary' },
-        { id: 2, title: 'Publicités', icon: 'mdi-bullhorn', color: 'success' },
-        { id: 3, title: 'Déplacements', icon: 'mdi-train-car', color: 'green' },
+        { id: 1, title: 'Carburants', icon: 'mdi-gas-station', color: 'deep-purple' },
+        { id: 2, title: 'Publicités', icon: 'mdi-bullhorn', color: 'green' },
+        { id: 3, title: 'Déplacements', icon: 'mdi-train-car', color: 'pink' },
         { id: 4, title: 'Frais Bancaires', icon: 'mdi-bank', color: 'blue' }
+      ],
+      vatRates: [
+        { id: 1, title: 0 },
+        { id: 2, title: 5.5 },
+        { id: 3, title: 10 },
+        { id: 4, title: 20 },
       ],
       operations: [
         {
@@ -186,9 +209,9 @@ export default {
         },
         {
           id: 7,
-          date: '2019-04-22',
-          title: 'FRANPRIX',
-          amount: '34,32',
+          date: '2019-04-21',
+          title: 'SOCIÉTÉ GÉNÉRALE',
+          amount: '734,32',
           comment: null,
           category: null,
           rate: null,
@@ -203,17 +226,7 @@ export default {
           category: 2,
           rate: 10,
           file: 'facture59.pdf'
-        },
-        {
-          id: 9,
-          date: '2019-04-21',
-          title: 'SOCIÉTÉ GÉNÉRALE',
-          amount: '734,32',
-          comment: null,
-          category: null,
-          rate: null,
-          file: null
-        },
+        }
       ]
 
     }
