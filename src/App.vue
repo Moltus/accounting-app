@@ -9,7 +9,7 @@
         <v-flex>
           <v-content>
             <TopSection v-bind:topSectionTabs="topSectionTabs" v-bind:mainItems="mainItems" />
-            <MainSectionHeader v-bind:opsCategories="opsCategories" v-bind:operations="operations" />
+            <MainSection v-bind:opsCategories="opsCategories" v-bind:operations="operations" />
           </v-content>
         </v-flex>
       </v-layout>
@@ -23,7 +23,7 @@
 // import HeaderNav from './components/header/HeaderNav.vue';
 import SideNav from './components/side-nav/SideNav.vue';
 import TopSection from './components/top-section/TopSection.vue';
-import MainSectionHeader from './components/main-section/MainSectionHeader.vue';
+import MainSection from './components/main-section/MainSection.vue';
 
 
 export default {
@@ -31,7 +31,7 @@ export default {
   components: {
     SideNav,
     TopSection,
-    MainSectionHeader
+    MainSection,
   },
   data () {
     return {

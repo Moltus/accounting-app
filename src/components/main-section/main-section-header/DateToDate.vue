@@ -1,6 +1,6 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs12 sm6 md4 px-2>
+    <v-flex xs12 sm6 md4 mx-2>
       <v-menu
         v-model="menu1"
         :close-on-content-click="false"
@@ -17,10 +17,11 @@
             label="Date de début"
             prepend-icon="event"
             readonly
+            color="success"
             v-on="on"
           ></v-text-field>
         </template>
-        <v-date-picker v-model="date1" @input="menu1 = false"></v-date-picker>
+        <v-date-picker color="success" v-model="date1" @input="menu1 = false"></v-date-picker>
       </v-menu>
     </v-flex>
     <!-- <v-spacer></v-spacer> -->
@@ -64,3 +65,4 @@
     })
   }
 </script>
+

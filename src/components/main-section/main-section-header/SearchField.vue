@@ -1,10 +1,10 @@
 <template>
   <v-text-field
-        class="mx-3"
+        class=" mr-4"
         flat
-        label="Search"
+        label="Rechercher"
         prepend-inner-icon="search"
-        solo-inverted
+        
       ></v-text-field>
 </template>
 
