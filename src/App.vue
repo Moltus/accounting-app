@@ -118,10 +118,10 @@ export default {
         }
       ],
       opsCategories: [
-        { id: 1, title: 'Carburants' },
-        { id: 2, title: 'Publicités' },
-        { id: 3, title: 'Déplacements' },
-        { id: 4, title: 'Frais Bancaires' }
+        { id: 1, title: 'Carburants', icon: 'mdi-gas-station', color: 'secondary' },
+        { id: 2, title: 'Publicités', icon: 'mid-bullhorn', color: 'success' },
+        { id: 3, title: 'Déplacements', icon: 'mdi-train-car', color: 'green' },
+        { id: 4, title: 'Frais Bancaires', icon: 'mdi-bank', color: 'blue' }
       ],
       operations: [
         {
@@ -147,10 +147,10 @@ export default {
         {
           id: 3,
           date: '2019-04-25',
-          title: 'MONOPRIX',
+          title: 'TOTAL',
           amount: '74,32',
           comment: 'Lorem ipsum dolor sit amet.',
-          category: 4,
+          category: 1,
           rate: 20,
           file: 'facture012.pdf'
         },

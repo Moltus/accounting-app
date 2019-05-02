@@ -1,9 +1,9 @@
 <template>
-  <v-container>
+  <v-container >
     <v-layout row>
     <v-flex fluid>
       <v-card>
-        <v-toolbar dark class="blue ma-0 py-2">
+        <v-toolbar dark class="blue mb-3 py-2">
           <v-layout row wrap align-center justify-space-between fill-height class="pt-2">
             <v-flex xs12 sm3>
               <SearchField />
@@ -19,6 +19,43 @@
             </v-flex>
           </v-layout>
         </v-toolbar>
+        <v-list>
+          <v-list-group
+            v-for="operation in operations"
+            :key="operation.id"
+
+            no-action
+          >
+            <template v-slot:activator>
+              <v-list-tile>
+                <v-list-tile-content >
+                  <v-layout row wrap justify-center align-content-center >
+                    <v-flex xs-3 class="mr-3">
+                      <p>{{getDayMonthFR(operation.date)}}</p>
+                    </v-flex>
+                    <v-flex xs-2 class="cell">
+                      <v-icon class="mr-3" :class="getIcon(operation.category)[1] + '--text'">{{getIcon(operation.category)[0]}}</v-icon>
+                    </v-flex>
+                    <v-flex xs-3 class="cell mr-4">
+                      <v-list-tile-title >{{ operation.title }}</v-list-tile-title>
+                    </v-flex>
+                    <v-flex xs-3 class="cell2 mr-3">
+                      <p>{{operation.comment}}</p>
+                    </v-flex>
+                    <v-flex xs-3 class="cell mr-3">
+                      <p>TVA : {{operation.rate ? operation.rate : 0}} %</p>
+                    </v-flex>
+                    <v-flex xs-3 class="">
+                      <p>{{operation.amount}} €</p>
+                    </v-flex>
+                  </v-layout>
+                </v-list-tile-content>
+              </v-list-tile>
+            </template>
+
+            
+          </v-list-group>
+        </v-list>
       </v-card>  
     </v-flex>
   </v-layout>
@@ -44,6 +81,39 @@
       return {
         
       }
+    },
+    props: ['operations', 'opsCategories'],
+    methods: {
+      getIcon(id) {
+        let icon;
+        let iconColor;
+        for (let i of this.opsCategories) {
+          if (i.id == id) {
+            icon = i.icon;
+            iconColor = i.color;
+          }
+        }
+        icon = icon || 'mdi-alert-circle';
+        iconColor = iconColor || 'primary';
+        return [icon, iconColor];
+      },
+      getDayMonthFR(date) {
+        let month = new Array("janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre");
+        let myDate = new Date(date);
+        return myDate.getDay() + ' ' + month[myDate.getMonth()];
+      }
     }
+    
   }
 </script>
+
+<style scoped>
+  .cell {
+    width: 150px;
+    text-align: center;
+  }
+  .cell2 {
+    width: 300px;
+  }
+
+</style>

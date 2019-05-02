@@ -1,6 +1,6 @@
 <template>
   <v-layout row wrap>
-    <v-flex xs12 sm6 md4 mx-2>
+    <v-flex xs12 sm6 md4 mr-4>
       <v-menu
         v-model="menu1"
         :close-on-content-click="false"
@@ -17,7 +17,7 @@
             label="Date de début"
             prepend-icon="event"
             readonly
-            color="success"
+            color="white"
             v-on="on"
           ></v-text-field>
         </template>
@@ -42,6 +42,7 @@
             label="Date de fin"
             prepend-icon="event"
             readonly
+            color="white"
             v-on="on"
           ></v-text-field>
         </template>

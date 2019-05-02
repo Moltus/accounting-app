@@ -4,6 +4,7 @@
         flat
         label="Rechercher"
         prepend-inner-icon="search"
+        color="white"
         
       ></v-text-field>
 </template>

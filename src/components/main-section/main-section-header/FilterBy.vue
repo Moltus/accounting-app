@@ -3,6 +3,7 @@
     :items="items"
     label="Filtrer par..."
     class="px-4"
+    color="primary"
   ></v-select>
 </template>
 
@@ -10,7 +11,7 @@
 export default {
   name: "FilterBy",
   data: () => ({
-      items: ['Montant', 'Catégorie', 'Taux TVA']
+      items: ['Date', 'Montant', 'Catégorie', 'Taux TVA']
     })
 }
 </script>
