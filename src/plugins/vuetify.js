@@ -9,6 +9,6 @@ Vue.use(Vuetify, {
     primary: '#fe7e3c',
     secondary: '#918dff',
     success: '#3adda2',
-    info: '#755e53'
+    info: '#725844'
   }
 })

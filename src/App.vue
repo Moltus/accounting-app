@@ -8,6 +8,7 @@
         </v-flex>
         <v-flex>
           <v-content>
+            <TopSection v-bind:topSectionTabs="topSectionTabs" v-bind:mainItems="mainItems" />
             <MainSectionHeader v-bind:opsCategories="opsCategories" v-bind:operations="operations" />
           </v-content>
         </v-flex>
@@ -72,11 +73,49 @@ export default {
           active: false
         }
       ],
+      topSectionTabs: [
+        {
+          id: 1,
+          title: "Compte Chèque USD"
+        },
+        {
+          id: 2,
+          title: "Notes de Frais"
+        },
+        {
+          id: 3,
+          title: "Mes Espèces"
+        }
+      ],
       mainItems: [
-        { id: 1, title: 'TRÉSORERIE', value: '7649,68€', color:'indigo' },
-        { id: 2, title: 'RECETTES', value: '6816,30€', color:'teal' },
-        { id: 3, title: 'DÉPENSES', value: '-2761,53€', color:'deep-purple' },
-        { id: 4, title: 'À VALIDER', value: '54', color:'primary' }
+        {
+          id: 1,
+          title: 'TRÉSORERIE',
+          value: '7649,68€',
+          color:'blue',
+          icon: 'mdi-treasure-chest'
+        },
+        {
+          id: 2,
+          title: 'RECETTES',
+          value: '6816,30€',
+          color:'success',
+          icon: 'mdi-finance'
+        },
+        {
+          id: 3,
+          title: 'DÉPENSES',
+          value: '-2761,53€',
+          color:'secondary',
+          icon: 'mdi-receipt'
+        },
+        {
+          id: 4,
+          title: 'À VALIDER',
+          value: '54',
+          color:'primary',
+          icon: 'mdi-checkbox-multiple-marked-outline'
+        }
       ],
       opsCategories: [
         { id: 1, title: 'Carburants' },
