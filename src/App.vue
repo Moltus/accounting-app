@@ -141,10 +141,10 @@ export default {
         { id: 4, title: 'Frais Bancaires', icon: 'mdi-bank', color: 'blue' }
       ],
       vatRates: [
-        { id: 1, title: 0 },
-        { id: 2, title: 5.5 },
-        { id: 3, title: 10 },
-        { id: 4, title: 20 },
+        { id: 1, title: '0' },
+        { id: 2, title: '5.5' },
+        { id: 3, title: '10' },
+        { id: 4, title: '20' },
       ],
       operations: [
         {

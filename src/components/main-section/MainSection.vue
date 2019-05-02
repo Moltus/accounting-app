@@ -28,8 +28,8 @@
             no-action
           >
             <template v-slot:activator>
-              <v-list-tile>
-                <v-list-tile-content >
+              <v-list-tile @click="activeRow = 'row' + operation.id" :class="{ 'primary lighten-4' : activeRow === 'row' + operation.id }">
+                <v-list-tile-content>
                   <v-container class="pb-0 pl-0">
                     <v-layout row wrap justify-center align-content-center >
                       <v-flex xs-2 class="cell2" text-xs-center>
@@ -85,7 +85,6 @@
                         v-for="vatRate in vatRates" 
                         :key="vatRate.id"
                         v-bind:label="vatRate.title"
-                        v-bind:color="black"
                         v-bind:value="vatRate.title"
                       ></v-radio>
                     </v-radio-group>
@@ -95,11 +94,11 @@
                     <br><br>
                     <!-- <input type="file" name="income" id="income"> -->
                     <v-btn
-                      :loading="loading3"
-                      :disabled="loading3"
+                      :loading="loading"
+                      :disabled="loading"
                       color="blue-grey"
                       class="white--text"
-                      @click="loader = 'loading3'"
+                      @click="loader = 'loading'"
                     >
                       Fichier
                       <v-icon right dark>cloud_upload</v-icon>
@@ -140,6 +139,7 @@
     
     data () {
       return {
+        activeRow: 'row2',
         categoryRadio: 'Publicités',
         vatRateRadio: 0,
         loader: null,
@@ -172,7 +172,7 @@
         const l = this.loader
         this[l] = !this[l]
 
-        setTimeout(() => (this[l] = false), 3000)
+        setTimeout(() => (this[l] = false), 2000)
 
         this.loader = null
       }
@@ -182,6 +182,9 @@
 </script>
 
 <style scoped>
+  v-list-tile.active {
+    background-color: '#fe7e3c';
+  }
   .cell1 {
     min-width: 75px;
   }

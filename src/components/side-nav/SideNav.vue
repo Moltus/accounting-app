@@ -5,7 +5,7 @@
         <h3 class="pa-3 grey--text text--lighten-4">{{pageTitle}}</h3>       
       </header>
       <ul v-for="navButton in navButtons" v-bind:key="navButton.id">
-        <li @click="activeBtn = 'btn' + navButton.id" :class="{ primary: activeBtn === 'btn' + navButton.id }">
+        <li @click="activeBtn = 'btn' + navButton.id" :class="{ primary : activeBtn === 'btn' + navButton.id }">
           <v-icon class="grey--text text--lighten-4" left dark>{{navButton.icon}}</v-icon>
           <a class="grey--text text--lighten-4">{{navButton.title}}</a>
         </li>
