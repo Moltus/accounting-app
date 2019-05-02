@@ -24,7 +24,6 @@
         <v-date-picker color="success" v-model="date1" @input="menu1 = false"></v-date-picker>
       </v-menu>
     </v-flex>
-    <!-- <v-spacer></v-spacer> -->
     <v-flex xs12 sm6 md4>
       <v-menu
         v-model="menu2"
@@ -58,7 +57,9 @@
   export default {
     name: "DateToDate",
     data: () => ({
+      // date1 defaults at beginning of the year.
       date1: new Date('2019-01-01').toISOString().substr(0, 10),
+      // date2 defaults to today.
       date2: new Date().toISOString().substr(0, 10),
       menu1: false,
       modal: false,

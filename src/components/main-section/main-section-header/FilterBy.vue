@@ -4,6 +4,7 @@
     label="Filtrer par..."
     class="px-4"
     color="black"
+    prepend-inner-icon="filter_list"
   ></v-select>
 </template>
 

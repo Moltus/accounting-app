@@ -8,24 +8,25 @@
       no-action
     >
       <template v-slot:activator>
-        <v-list-tile @click="activeRow = 'row' + operation.id" :class="{ 'primary lighten-4' : activeRow === 'row' + operation.id }">
+        <v-list-tile @click="activeRow = 'row' + operation.id" :class="{ 'secondary lighten-3' : activeRow === 'row' + operation.id }">
           <v-list-tile-content>
-            <v-container class="pb-0 pl-0">
+            
+            <v-container class="pb-1 pl-0">
               <v-layout row wrap justify-center align-content-center >
                 <v-flex xs-2 class="cell2" text-xs-center>
                   <p>{{getDayMonthFR(operation.date)}}</p>
                 </v-flex>
                 <v-flex xs-1 class="cell1" text-xs-center>
-                  <v-icon class="mr-3" :class="getIcon(operation.category)[1] + '--text'">{{getIcon(operation.category)[0]}}</v-icon>
+                  <v-icon class="" :class="getIcon(operation.category)[1] + '--text'">{{getIcon(operation.category)[0]}}</v-icon>
                 </v-flex>
                 <v-flex xs-2 class="cell2">
                   <v-list-tile-title >{{ operation.title }}</v-list-tile-title>
                 </v-flex>
                 <v-flex xs-3 class="cell3">
-                  <p>{{operation.comment}}</p>
+                  <p v-bind:class="[operation.comment ? '' : 'primary--text']">{{operation.comment ? operation.comment : 'En attente de validation.'}}</p>
                 </v-flex>
                 <v-flex xs-2 class="cell2" text-xs-right>
-                  <p>TVA : {{operation.rate ? operation.rate : 0}} %</p>
+                  <p>{{operation.rate ? 'TVA : ' + operation.rate + ' %': ''}}</p>
                 </v-flex>
                 <v-flex xs-2 class="cell2" text-xs-right>
                   <p>{{operation.amount}} €</p>
@@ -33,11 +34,14 @@
               </v-layout>
             </v-container>
           </v-list-tile-content>
+
+          
         </v-list-tile>
       </template>
+      
       <form 
       action=""
-      v-if="operation.file == null"  
+      v-if="operation.file === null"  
       class=" grey lighten-3"
       >
         <v-container>
@@ -66,6 +70,7 @@
                   :key="vatRate.id"
                   v-bind:label="vatRate.title"
                   v-bind:value="vatRate.title"
+                  color="grey darken-3"
                 ></v-radio>
               </v-radio-group>
             </v-flex>
@@ -85,7 +90,7 @@
               </v-btn>
               <br><br>
               <!-- <input type="submit" value="Valider l'opération"> -->
-              <v-btn color="primary">Valider l'opération
+              <v-btn color="primary" type="submit" value="validate">Valider l'opération
                 <v-icon right dark>check_circle</v-icon>
               </v-btn>
             </v-flex>

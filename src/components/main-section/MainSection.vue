@@ -1,35 +1,39 @@
 <template>
   <v-container >
     <v-layout row>
-    <v-flex fluid>
-      <v-card>
-        <v-toolbar dark class="blue mb-3 py-2">
-          <v-layout row wrap align-center justify-space-between fill-height class="pt-2">
-            <v-flex xs12 sm3>
-              <SearchField />
-            </v-flex>
-            <v-flex xs12 sm3>
-              <DateToDate />
-            </v-flex>
-            <v-flex xs12 sm3>
-              <FilterBy />
-            </v-flex>
-            <v-flex xs12 sm3 >
-              <ToValidateSwitch />
-            </v-flex>
-          </v-layout>
-        </v-toolbar>
-        
-        <!-- Load OperationsList component for list body with inside forms -->
-          <OperationsList 
-            v-bind:opsCategories="opsCategories" v-bind:operations="operations" 
-            v-bind:vatRates="vatRates"
-          />
+      <v-flex fluid>
+        <v-card>
+          <v-toolbar dark class="secondary darken-1 mb-3 py-2">
+            <v-layout row wrap align-center justify-space-between fill-height class="pt-2">
+              <v-flex xs12 sm3>
+                <!-- Load component -->
+                <SearchField />
+              </v-flex>
+              <v-flex xs12 sm3>
+                <!-- Load component -->
+                <DateToDate />
+              </v-flex>
+              <v-flex xs12 sm3>
+                <!-- Load component -->
+                <FilterBy />
+              </v-flex>
+              <v-flex xs12 sm3 >
+                <!-- Load component -->
+                <ToValidateSwitch />
+              </v-flex>
+            </v-layout>
+          </v-toolbar>
           
-        
-      </v-card>  
-    </v-flex>
-  </v-layout>
+          <!-- Load OperationsList component for row creation and expansion panel inside forms -->
+            <OperationsList 
+              v-bind:opsCategories="opsCategories" v-bind:operations="operations" 
+              v-bind:vatRates="vatRates"
+            />
+            
+          
+        </v-card>  
+      </v-flex>
+    </v-layout>
   </v-container>
 </template>
 

@@ -1,5 +1,5 @@
 <template>
-  <v-switch color="white" class="pl-4" v-model="switch1" :label="`Afficher opérations à valider`"></v-switch>
+  <v-switch color="white" class="pl-4 mt-2" v-model="switch1" :label="`Afficher opérations à valider`"></v-switch>
 </template>
 
 <script>

@@ -25,7 +25,7 @@
 </template>
 
 <script>
-// import HeaderNav from './components/header/HeaderNav.vue';
+
 import SideNav from './components/side-nav/SideNav.vue';
 import TopSection from './components/top-section/TopSection.vue';
 import MainSection from './components/main-section/MainSection.vue';
@@ -172,7 +172,7 @@ export default {
           date: '2019-04-25',
           title: 'TOTAL',
           amount: '74,32',
-          comment: 'Lorem ipsum dolor sit amet.',
+          comment: 'Lorem ipsum dolor sit amet consectetur..',
           category: 1,
           rate: 20,
           file: 'facture012.pdf'
@@ -182,7 +182,7 @@ export default {
           date: '2019-04-25',
           title: 'CRÉDIT AGRICOLE',
           amount: '74,32',
-          comment: 'Lorem ipsum dolor sit amet.',
+          comment: 'Lorem ipsum dolor sit amet consectetur..',
           category: 4,
           rate: 10,
           file: 'facture99.pdf'
@@ -202,7 +202,7 @@ export default {
           date: '2019-04-24',
           title: 'SNCF',
           amount: '34,32',
-          comment: 'Lorem ipsum dolor sit amet.',
+          comment: 'Lorem ipsum dolor sit amet consectetur..',
           category: 3,
           rate: 5.5,
           file: 'facture29.pdf'
@@ -222,7 +222,7 @@ export default {
           date: '2019-04-22',
           title: 'AXA',
           amount: '234,32',
-          comment: 'Lorem ipsum dolor sit amet.',
+          comment: 'Lorem ipsum dolor sit amet consectetur..',
           category: 2,
           rate: 10,
           file: 'facture59.pdf'
@@ -233,3 +233,4 @@ export default {
   }
 }
 </script>
+

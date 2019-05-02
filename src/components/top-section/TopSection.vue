@@ -6,13 +6,16 @@
       fixed-tabs
       color="#fafafa"
       class="pt-3"
+      slider-color='secondary darken-1'
 
     >
+      <!-- props from App.vue gets tabs names and Items Values to display -->
       <v-tab
         v-for="topSectionTab in topSectionTabs"
           :key="topSectionTab.id"
           :href="'#tab' + topSectionTab.id"
-        class="subheading"
+          class="subheading"
+          
       >
         {{ topSectionTab.title }}
 
@@ -24,7 +27,7 @@
       >
         <v-container fluid class="pa-3">
           <v-layout row wrap>
-            <v-flex v-for="mainItem in mainItems" v-bind:key="mainItem.id">
+            <v-flex xs-3 sm-6 v-for="mainItem in mainItems" v-bind:key="mainItem.id">
               <v-card class="pa-3 ma-3">
                 <v-layout row wrap align-end fill-height>
                   <v-flex>
